@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    
+    <head>
+        
+        <meta charset="utf-8">
+        <meta name="author" content="Zachary Baum">
+        
+        <title>Park Ranger Watson</title>
+                
+        <!-- jQuery library -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.js"></script>   
+        
+        <!-- Latest Bootstrap -->
+        <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+
+        <!-- Custom CSS --> 
+        <link href="css/bootstrap.css" rel="stylesheet">
+        <link href="css/hover.css" rel="stylesheet">
+        <link href="css/animate.css" rel="stylesheet">
+        <link href="css/freelancer.css" rel="stylesheet">
+        <link href="css/watson.css" rel="stylesheet">
+        
+        <!-- Custom .js-->
+        <script src="js/wow.min.js"></script>        
+        <script src="js/materialize.js"></script>        
+        <script src="js/freelancer.js"></script>  
+        <script src="js/watson.js"></script> 
+   
+        <!-- Custom Fonts -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+        <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+        <link href="http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+
+    </head>
+    
+    <body>
+
+        <script>document.write("<body background='"+ base +"'>");</script>
+
+        <div class="outer">
+        
+            <div class="middle">
+        
+                <div class="inner">
+
+                    <div class="container well well-lg wow fadeIn" data-wow-duration="1s" data-wow-delay="0.5s">
+
+                        <div class="container-fluid">
+
+                            <div class="row">
+                    
+                                <!-- Main QA Area-->
+                                <div id="mainQA" class="col-sm-6 col-sm-offset-3">
+
+                                    <div class="text-center wow fadeIn" data-wow-duration="2s" data-wow-delay="2s">
+                                
+                                        <img src="img/PRWLogoClear.png" width="150px" height="auto">
+                                    
+                                        <h1>Park Ranger<br>Watson</h1>
+
+                                    </div><!-- Center Align -->
+
+                                    <div class="text-left wow fadeInDown" data-wow-duration="2s" data-wow-delay="4s">
+                                    
+                                        <form class="form-horizontal" method="post">
+
+                                            <div class="form-group">
+
+                                                <div class="input-group input-group-md">
+
+                                                    <input autofocus type="text" class="form-control" placeholder="What activities are there to do at Banff National Park?" list="listid"id="questionText">
+
+                                                    <datalist id='listid'>
+
+                                                        <!-- TODO: Come up with good questions to ask! -->
+
+                                                       <option value="What's the entry fee at Fundy National Park?">
+                                                       
+                                                    </datalist> 
+
+                                                    <div class="input-group-btn">
+
+                                                        <button type="button" id="ask" class="btn waves-effect waves-colour btn-primary btn-md" value="click" onClick="ToggleAnswersArea(), AskWatson(), this.blur();" data-target="#AnswerBox">Ask</button>
+
+                                                    </div><!-- Input Group Button -->
+
+                                                </div><!-- Input Group Medium -->
+
+                                            </div><!-- Form Group -->
+                                            
+                                        </form><!-- Horizontal Form -->
+
+                                    </div><!-- Left Align -->
+
+                                    <div id="answers" class="wow hidden" data-wow-duration="1s">
+                            
+                                        <h4>Answer</h4>
+
+                                        <p id="answerText"></p>
+
+                                        <p id="confidenceText" class="small text-right"></p>
+
+                                        <div id="outer">
+
+                                            <div class="inner">
+
+                                                <button type="button" id="openclosenotebook" value="click" onClick="ToggleMoveQAArea(), $('addToNote').hide(); this.blur();" class="btn btn-primary btn-sm buzz-out" data-toggle="collapse" data-target="#notebookAddButton">Open Notebook</button>
+
+                                            </div><!-- Inner -->
+
+                                            <div class="inner">
+
+                                                <button type="button" id="addToNote" class="btn btn-primary btn-sm" value="click" onClick="AddToNotebook(), this.blur();">Add To Notebook</button>
+
+                                            </div><!-- Inner -->
+
+                                        </div><!-- Outer Inline Buttons -->
+
+                                    </div><!-- Answer Area -->
+
+
+                                </div><!-- Col Offset 3 + 6 -->
+                            
+                                <!-- Notebook Area-->
+                                <div id="notebookarea" class="hidden col-sm-4 col-sm-offset-1 text-center">
+
+                                    <div id="container">
+
+                                        <div class="text-justify" id="notebook">
+
+                                            <br>
+
+                                            <h2 class="text-center">Notebook</h2>
+
+                                            <div id="scroll" data-spy="scroll">
+                                               
+                                            </div><!-- Notebook Scrollable Question and Answer List -->
+
+                                        </div>
+
+                                    </div><!-- Notebook Collapsable -->
+
+                                </div><!-- Col Offset 1 + 4 -->
+
+                            </div><!-- Row -->
+
+                        </div><!-- Fluid Container -->
+
+                    </div><!-- Container Well -->
+
+                </div><!-- Inner -->
+
+            </div><!-- Middle -->
+
+        </div><!-- Outer -->
+
+    </body>
+
+</html>
