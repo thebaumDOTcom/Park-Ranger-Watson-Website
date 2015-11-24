@@ -18,7 +18,6 @@ function AskWatson(){
         success: function (data, status, xhr){
 
             console.log("Question Asked: " + qText);
-            console.log(data);
 
             var answer = JSON.parse(data);
             $('#answerText').html(String(answer.question.evidencelist[0].text));
