@@ -64,7 +64,21 @@
                                     </div><!-- Center Align -->
 
                                     <div class="text-left wow fadeInDown" data-wow-duration="2s" data-wow-delay="4s">
+
+                                        <div class="text-right">
+
+                                            <a href="#AskModal">
+
+                                                <div style="position: relative; left: 35px; top: 30px">
+
+                                                    <i class="fa fa-info-circle"></i>
+
+                                                </div>
+
+                                            </a>
                                     
+                                        </div>
+
                                         <form class="form-horizontal" method="post">
 
                                             <div class="form-group">
@@ -76,6 +90,14 @@
                                                     <datalist id='listid'>
 
                                                         <!-- TODO: Come up with good questions to ask! -->
+
+                                                       <option value="What's the entry fee at Fundy National Park?">
+
+                                                       <option value="What's the entry fee at Fundy National Park?">
+
+                                                       <option value="What's the entry fee at Fundy National Park?">
+
+                                                       <option value="What's the entry fee at Fundy National Park?">
 
                                                        <option value="What's the entry fee at Fundy National Park?">
                                                        
@@ -114,6 +136,20 @@
                                             <div class="inner">
 
                                                 <button type="button" id="addToNote" class="btn btn-primary btn-sm" value="click" onClick="AddToNotebook(), this.blur();">Add To Notebook</button>
+
+                                            </div><!-- Inner -->
+
+                                            <div class="inner">
+
+                                                <a href="#NotebookModal">
+
+                                                    <div style="position: relative; left: 5px;">
+
+                                                        <i class="fa fa-info-circle"></i>
+
+                                                    </div>
+
+                                                </a>
 
                                             </div><!-- Inner -->
 
@@ -156,6 +192,42 @@
             </div><!-- Middle -->
 
         </div><!-- Outer -->
+
+        <div id="AskModal" class="modalDialog">
+                                               
+            <div>
+
+                <a href="#closeAsk" title="CloseAsk" class="close">X</a>
+
+                <h3>Asking Questions</h3>
+
+                <p class="text-justify">Asking questions to Park Ranger Watson is simple! When you open the application, a form to enter your question is waiting for you.</p>
+
+                <p class="text-justify">Once you have entered your question; click “Ask”, or hit enter, and Park Ranger Watson will answer you promptly.</p>
+
+                <p class="text-justify"></p>
+
+            </div>
+
+        </div>
+
+        <div id="NotebookModal" class="modalDialog">
+
+            <div>
+                
+                <a href="#closeNote" title="CloseNote" class="close">X</a>
+
+                <h3>Using your Notebook</h3>
+
+                <p class="text-justify">Open up your Notebook and you can see all previously saved answers.</p>
+
+                <p class="text-justify">Scroll through your answers as you would a normal document or webpage.</p>
+
+                <p class="text-justify">Satisfied with the information that you have stored in your Notebook? Email it to a friend! Just click the little paper plane.</p>
+
+            </div>
+
+        </div>
 
     </body>
 

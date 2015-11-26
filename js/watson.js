@@ -15,7 +15,7 @@ function AskWatson(){
 
         data: {question: qText},
 
-        success: function (data, status, xhr){
+        success: function (data){
 
             console.log("Question Asked: " + qText);
 
@@ -30,18 +30,6 @@ function AskWatson(){
         }
     });
 };
-
-
-$(document).keypress(function(event){
-
-    var keycode = (event.keyCode ? event.keyCode : event.which);
-    
-    if(keycode == '13'){
-        event.preventDefault();
-        ToggleAnswersArea();
-        AskWatson();   
-    }
-});
 
 // Open or Close Notebook Panel
 function ToggleMoveQAArea(){
@@ -87,24 +75,22 @@ function ToggleMoveNBArea(){
     }
 };
 
+// Write to the Notebook area, and update the mailto link on click.
 function AddToNotebook(){
 
     var qText = document.getElementById("questionText").value;
-
     var aText = document.getElementById("answerText").innerHTML;
 
     var writeTo = document.getElementById("scroll");
-
     writeTo.innerHTML += '<h5>' + qText + '</h5><p class="small">' + aText + '</p><br>';
 
     var buttonAnchor = document.getElementById("emailbutton");
-
     emailText = String(writeTo.innerHTML);
     emailText = emailText.replace(/^\s+|\s+$/g,'');
     emailText = emailText.split('<h5>').join('');
     emailText = emailText.split('<p class="small">').join('');
     emailText = emailText.split('</h5>').join('%0D%0A%0D%0A');
-    emailText = emailText.split('</p><br>').join('%0D%0A%0D%0A');
+    emailText = emailText.split('</p><br>').join('%0D%0A%0D%0A%0D%0A');
     emailText = emailText.split(' ').join('%20');
     buttonAnchor.removeAttribute('href');
     buttonAnchor.setAttribute('href', 'mailto:email@example.com?subject=Check%20Out%20This%20Info%20On%20Parks%20Canada!&body=' + emailText);
@@ -119,6 +105,18 @@ function ToggleAnswersArea(){
 
 // New instance of WOW.
 new WOW().init();
+
+// Add listener for the enter key and use it to POST requests,
+$(document).keypress(function(event){
+
+    var keycode = (event.keyCode ? event.keyCode : event.which);
+    
+    if(keycode == '13'){
+        event.preventDefault();
+        ToggleAnswersArea();
+        AskWatson();   
+    }
+});
 
 // Pick random background.
 bgSel = new Array(27);
