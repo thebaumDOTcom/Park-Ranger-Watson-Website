@@ -93,9 +93,21 @@ function AddToNotebook(){
 
     var aText = document.getElementById("answerText").innerHTML;
 
-    var divToWriteTo = document.getElementById('scroll');
+    var writeTo = document.getElementById("scroll");
 
-    divToWriteTo.innerHTML += '<h5>' + qText + '</h5><p class="small">' + aText + '</p><br>';
+    writeTo.innerHTML += '<h5>' + qText + '</h5><p class="small">' + aText + '</p><br>';
+
+    var buttonAnchor = document.getElementById("emailbutton");
+
+    emailText = String(writeTo.innerHTML);
+    emailText = emailText.replace(/^\s+|\s+$/g,'');
+    emailText = emailText.split('<h5>').join('');
+    emailText = emailText.split('<p class="small">').join('');
+    emailText = emailText.split('</h5>').join('%0D%0A%0D%0A');
+    emailText = emailText.split('</p><br>').join('%0D%0A%0D%0A');
+    emailText = emailText.split(' ').join('%20');
+    buttonAnchor.removeAttribute('href');
+    buttonAnchor.setAttribute('href', 'mailto:email@example.com?subject=Check%20Out%20This%20Info%20On%20Parks%20Canada!&body=' + emailText);
 };
 
 // Fade in Answers
